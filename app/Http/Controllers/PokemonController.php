@@ -14,11 +14,11 @@ class PokemonController extends Controller
      */
     public function index()
     {
-        $pokemon = Pokemon::latest()->paginate(5);
+        $pokemons = Pokemon::latest()->paginate(5);
 
   
 
-        return view('pokemon.index',compact('pokemon'))
+        return view('pokemons.index',compact('pokemons'))
 
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -30,7 +30,7 @@ class PokemonController extends Controller
      */
     public function create()
     {
-        return view('pokemon.create');
+        return view('pokemons.create');
     }
 
     /**
@@ -59,7 +59,7 @@ class PokemonController extends Controller
 
    
 
-        return redirect()->route('pokemon.index')
+        return redirect()->route('pokemons.index')
 
                         ->with('success','Pokemon creat amb exit.');
     }
@@ -72,7 +72,7 @@ class PokemonController extends Controller
      */
     public function show(Pokemon $pokemon)
     {
-        return view('pokemon.show',compact('pokemon'));
+        return view('pokemons.show',compact('pokemon'));
     }
 
     /**

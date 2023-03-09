@@ -13,7 +13,7 @@ class CreatePokemonTable extends Migration
      */
     public function up()
     {
-        Schema::create('pokemon', function (Blueprint $table) {
+        Schema::create('pokemons', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nom');
             $table->string('tipus');
@@ -30,6 +30,6 @@ class CreatePokemonTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pokemon');
+        Schema::dropIfExists('pokemons');
     }
 }
