@@ -56,7 +56,7 @@
 
         </tr>
 
-        @foreach ($pokemon as $pokemon)
+        @foreach ($pokemons as $pokemon)
 
         <tr>
 
@@ -104,7 +104,7 @@
 
   
 
-    {!! $pokemon->links() !!}
+    {!! $pokemons->links() !!}
 
       
 
